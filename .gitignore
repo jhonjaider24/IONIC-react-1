@@ -35,3 +35,14 @@ yarn-error.log*
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Android / Capacitor generated build artifacts
+/android/.gradle/
+/android/.kotlin/
+/android/**/build/
+/android/**/generated/
+/android/app/release/
+/android/local.properties
+/android/.idea/
+/android/*.iml
+/android/capacitor-cordova-android-plugins/build/

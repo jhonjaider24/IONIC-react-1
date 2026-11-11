@@ -39,13 +39,3 @@ npm run lint        # Ejecuta las comprobaciones de estilo y tipos
 npm run test:unit   # Ejecuta las pruebas unitarias
 npm run test:e2e    # Ejecuta las pruebas de extremo a extremo
 ```
-
-## Publicar cambios en GitHub
-
-Después de guardar el README, ejecuta desde la carpeta del proyecto:
-
-```bash
-git add README.md
-git commit -m "docs: agregar README"
-git push
-```
