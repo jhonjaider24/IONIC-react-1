@@ -1,23 +1,30 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import {
+  IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonImg
+} from '@ionic/react';
+import { useState } from 'react';
 
 const Tab2: React.FC = () => {
+  const [imagen, setImagen] = useState<string>();
+
+  const tomarFoto = async () => {
+    const foto = await Camera.getPhoto({
+      quality: 80,
+      resultType: CameraResultType.Uri,
+    });
+    setImagen(foto.webPath);
+  };
+
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+        <IonToolbar color="primary">
+          <IonTitle>Cámara</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+      <IonContent className="ion-padding">
+        <IonButton expand="block" onClick={tomarFoto}>Tomar foto</IonButton>
+        {imagen && <IonImg src={imagen} />}
       </IonContent>
     </IonPage>
   );

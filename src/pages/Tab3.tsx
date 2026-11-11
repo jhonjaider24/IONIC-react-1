@@ -1,26 +1,27 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {
+  IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
+  IonCard, IonCardHeader, IonCardTitle, IonCardContent
+} from '@ionic/react';
 
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
-
-const Tab3: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
-      </IonContent>
-    </IonPage>
-  );
-};
+const Tab3: React.FC = () => (
+  <IonPage>
+    <IonHeader>
+      <IonToolbar color="primary">
+        <IonTitle>Acerca de Ionic</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent className="ion-padding">
+      <IonCard>
+        <IonCardHeader>
+          <IonCardTitle>¿Qué es Ionic?</IonCardTitle>
+        </IonCardHeader>
+        <IonCardContent>
+          Framework para crear apps móviles con tecnologías web
+          (HTML, CSS y TypeScript) y un solo código base, aquí usando React.
+        </IonCardContent>
+      </IonCard>
+    </IonContent>
+  </IonPage>
+);
 
 export default Tab3;
